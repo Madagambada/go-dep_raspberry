@@ -8,7 +8,7 @@ if [ $remote_version != $local_version ]; then
   
   systemctl stop qbittorrent-nox
 
-  apt install qbittorrent-nox_$remote_version-1_i386.deb -y
+  apt install ./qbittorrent-nox_$remote_version-1_i386.deb -y
   rm qbittorrent-nox_$remote_version-1_i386.deb
   
   #Change madagambada so that it fits your username
