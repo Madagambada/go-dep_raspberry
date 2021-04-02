@@ -1,6 +1,6 @@
 #!/bin/bash
 
-remote_version=$(curl  https://api.github.com/repos/Madagambada/qbittorrent-nox-static-i386/tags -s | grep name | sed 's/    "name":\ "//' | sed 's/",//' | sort -V | tail -1)
+remote_version=$(curl https://api.github.com/repos/Madagambada/qbittorrent-nox-i386/tags -s | grep name | sed 's/    "name":\ "//' | sed 's/",//' | sort -V | tail -1)
 if [ -z $remote_version ]
 then
   remote_version="0"
@@ -14,7 +14,7 @@ else
 fi
 
 if [ $remote_version != $local_version ]; then
-  wget -q https://github.com/Madagambada/qbittorrent-nox-static-i386/releases/download/$remote_version/qbittorrent-nox_$remote_version-1_i386.deb
+  wget -q https://github.com/Madagambada/qbittorrent-nox-i386/releases/download/$remote_version/qbittorrent-nox_$remote_version-1_i386.deb
   
   systemctl stop qbittorrent-nox
 
