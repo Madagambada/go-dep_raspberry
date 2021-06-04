@@ -4,6 +4,6 @@ remote_version=$(curl  https://api.github.com/repos/cloudflare/cloudflared/tags 
 local_version=$(cloudflared -v | sed 's/.*n //' | sed 's/ (.*//')
 
 if [ $remote_version != $local_version ]; then
-  cloudflared update
+  /usr/local/bin/cloudflared update
   systemctl restart cloudflared
 fi
